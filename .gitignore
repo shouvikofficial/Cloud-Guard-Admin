@@ -1,0 +1,14 @@
+# ===== SECRET FILES =====
+admin-panel/js/env.js
+
+# ===== OS FILES =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== IDE =====
+.vscode/
+.idea/
+
+# ===== Logs =====
+*.log
