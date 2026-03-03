@@ -1,5 +1,5 @@
 {
-  "buildCommand": null,
+  "buildCommand": "node generate-env.js",
   "outputDirectory": "admin-panel",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
