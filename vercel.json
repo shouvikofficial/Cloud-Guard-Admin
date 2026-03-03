@@ -1,0 +1,7 @@
+{
+  "buildCommand": null,
+  "outputDirectory": "admin-panel",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
