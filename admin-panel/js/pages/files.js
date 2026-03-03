@@ -53,8 +53,8 @@ Router.register('files', async (container) => {
             <div class="card">
                 <div class="card-header" style="flex-wrap:wrap;gap:12px">
                     <h2>All Files (${filtered.length})</h2>
-                    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-                        <div class="search-bar" style="max-width:280px">
+                    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;width:100%">
+                        <div class="search-bar">
                             <span class="material-icons-round">search</span>
                             <input type="text" placeholder="Search files..." id="file-search" value="${escapeHtml(searchQuery)}">
                         </div>
@@ -85,7 +85,7 @@ Router.register('files', async (container) => {
                                 <tr>
                                     <td style="display:flex;align-items:center;gap:10px;">
                                         <span class="material-icons-round" style="color:var(--${f.type === 'image' ? 'blue' : f.type === 'video' ? 'purple' : f.type === 'music' ? 'green' : 'teal'})">${typeIcons[f.type] || 'description'}</span>
-                                        <span style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block">${escapeHtml(f.name || 'Untitled')}</span>
+                                        <span style="max-width:clamp(80px,30vw,200px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block">${escapeHtml(f.name || 'Untitled')}</span>
                                     </td>
                                     <td><span class="badge ${f.type || ''}">${f.type || '-'}</span></td>
                                     <td>${formatBytes(f.size || 0)}</td>

@@ -35,7 +35,7 @@ Router.register('settings', async (container) => {
                 </div>
                 <div style="display:flex;gap:8px;align-items:center">
                     <input type="text" id="backend-url-input" value="${escapeHtml(settings.backendUrl)}" 
-                        style="padding:8px 12px;border-radius:8px;border:1.5px solid var(--border);font-family:inherit;font-size:0.85rem;width:320px;background:var(--bg)">
+                        style="padding:8px 12px;border-radius:8px;border:1.5px solid var(--border);font-family:inherit;font-size:0.85rem;width:100%;max-width:320px;background:var(--bg)">
                     <button class="btn btn-green btn-sm" id="save-url-btn">Save</button>
                 </div>
             </div>
@@ -126,7 +126,7 @@ Router.register('settings', async (container) => {
         ]);
 
         document.getElementById('db-info').innerHTML = `
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,140px),1fr));gap:12px">
                 <div style="padding:14px;background:var(--bg);border-radius:12px;text-align:center">
                     <div style="font-size:1.3rem;font-weight:800">${files.count ?? '?'}</div>
                     <div style="font-size:0.8rem;color:var(--text-secondary)">Files</div>
