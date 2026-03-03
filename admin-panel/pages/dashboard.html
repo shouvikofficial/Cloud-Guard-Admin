@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div id="header"></div>
+
+        <!-- Sidebar -->
+        <div id="sidebar"></div>
+
+        <!-- Main Content -->
+        <main>
+            <h1>Dashboard</h1>
+            <div class="metrics">
+                <div class="metric">
+                    <h2>Total Users</h2>
+                    <p id="total-users">0</p>
+                </div>
+                <div class="metric">
+                    <h2>Total Sales</h2>
+                    <p id="total-sales">$0</p>
+                </div>
+                <div class="metric">
+                    <h2>New Signups</h2>
+                    <p id="new-signups">0</p>
+                </div>
+            </div>
+
+            <div class="charts">
+                <h2>Sales Overview</h2>
+                <canvas id="sales-chart"></canvas>
+            </div>
+
+            <div class="tables">
+                <h2>Recent Activities</h2>
+                <table id="activities-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Activity</th>
+                            <th>User</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic content will be injected here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <div id="footer"></div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/charts.js"></script>
+    <script src="../js/tables.js"></script>
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>

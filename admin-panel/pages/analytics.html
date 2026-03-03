@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Admin Panel</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Include header component -->
+            <div id="header"></div>
+        </header>
+        <aside>
+            <!-- Include sidebar component -->
+            <div id="sidebar"></div>
+        </aside>
+        <main>
+            <h1>Analytics</h1>
+            <div class="analytics-content">
+                <div class="report">
+                    <h2>Sales Overview</h2>
+                    <canvas id="salesChart"></canvas>
+                </div>
+                <div class="report">
+                    <h2>User Engagement</h2>
+                    <canvas id="engagementChart"></canvas>
+                </div>
+                <div class="report">
+                    <h2>Traffic Sources</h2>
+                    <canvas id="trafficChart"></canvas>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Include footer component -->
+            <div id="footer"></div>
+        </footer>
+    </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        // Initialize charts
+        document.addEventListener('DOMContentLoaded', function() {
+            createSalesChart();
+            createEngagementChart();
+            createTrafficChart();
+        });
+    </script>
+</body>
+</html>

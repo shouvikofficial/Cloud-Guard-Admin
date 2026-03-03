@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Guard — Admin Panel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- ========== LOGIN SCREEN ========== -->
+    <div id="login-screen" class="login-screen">
+        <div class="login-card">
+            <div class="login-logo">
+                <span class="material-icons-round logo-icon">cloud</span>
+                <h1>Cloud Guard</h1>
+                <p>Admin Panel</p>
+            </div>
+            <form id="login-form">
+                <div class="input-group">
+                    <span class="material-icons-round">email</span>
+                    <input type="email" id="login-email" placeholder="Admin email" required>
+                </div>
+                <div class="input-group">
+                    <span class="material-icons-round">lock</span>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-primary" id="login-btn">
+                    <span class="btn-text">Sign In</span>
+                    <span class="btn-loader hidden"></span>
+                </button>
+                <p id="login-error" class="error-text hidden"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========== MAIN APP ========== -->
+    <div id="app-shell" class="app-shell hidden">
+        
+        <!-- SIDEBAR -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-brand">
+                <span class="material-icons-round brand-icon">cloud</span>
+                <span class="brand-text">Cloud Guard</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active" data-page="dashboard">
+                    <span class="material-icons-round">dashboard</span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+                <a href="#users" class="nav-item" data-page="users">
+                    <span class="material-icons-round">people</span>
+                    <span class="nav-label">Users</span>
+                </a>
+                <a href="#files" class="nav-item" data-page="files">
+                    <span class="material-icons-round">folder</span>
+                    <span class="nav-label">Files</span>
+                </a>
+                <a href="#analytics" class="nav-item" data-page="analytics">
+                    <span class="material-icons-round">analytics</span>
+                    <span class="nav-label">Analytics</span>
+                </a>
+                <a href="#settings" class="nav-item" data-page="settings">
+                    <span class="material-icons-round">settings</span>
+                    <span class="nav-label">Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="nav-item logout-btn">
+                    <span class="material-icons-round">logout</span>
+                    <span class="nav-label">Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-wrapper">
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+                <button id="sidebar-toggle" class="sidebar-toggle">
+                    <span class="material-icons-round">menu</span>
+                </button>
+                <div class="topbar-title" id="page-title">Dashboard</div>
+                <div class="topbar-right">
+                    <div class="admin-badge">
+                        <span class="material-icons-round">admin_panel_settings</span>
+                        <span id="admin-email">admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- PAGE CONTENT -->
+            <main class="page-content" id="page-content">
+                <!-- Pages injected here by router -->
+            </main>
+
+        </div>
+    </div>
+
+    <!-- Supabase CDN (v2 UMD) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script>
+        // Verify Supabase loaded
+        if (!window.supabase) {
+            document.getElementById('login-error').textContent = 'ERROR: Supabase CDN failed to load. Check internet.';
+            document.getElementById('login-error').classList.remove('hidden');
+        }
+    </script>
+    <!-- Chart.js for analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+    
+    <!-- App Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/pages/dashboard.js"></script>
+    <script src="js/pages/users.js"></script>
+    <script src="js/pages/files.js"></script>
+    <script src="js/pages/analytics.js"></script>
+    <script src="js/pages/settings.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

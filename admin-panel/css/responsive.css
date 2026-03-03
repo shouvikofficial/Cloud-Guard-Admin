@@ -1,0 +1,73 @@
+/admin-panel/admin-panel/css/responsive.css
+
+/* Responsive styles for the admin panel */
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .header {
+        padding: 10px;
+    }
+
+    .card {
+        margin: 10px;
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    .sidebar {
+        width: 250px;
+    }
+
+    .main-content {
+        margin-left: 250px;
+    }
+
+    .header {
+        padding: 15px;
+    }
+
+    .card {
+        margin: 15px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+    body {
+        font-size: 18px;
+    }
+
+    .sidebar {
+        width: 300px;
+    }
+
+    .main-content {
+        margin-left: 300px;
+    }
+
+    .header {
+        padding: 20px;
+    }
+
+    .card {
+        margin: 20px;
+    }
+}
